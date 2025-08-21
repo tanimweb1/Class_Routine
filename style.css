@@ -1,0 +1,129 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #fff;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #004aad;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Subject Card */
+.subject-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.subject-card:hover {
+  transform: scale(1.02);
+}
+
+.subject-card h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #00509e;
+}
+
+/* Task Row */
+.task-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.task-row label {
+  flex: 1 1 100px;
+  font-weight: 600;
+  color: #444;
+}
+
+.task-row input[type="text"],
+.task-row input[type="date"] {
+  flex: 2 1 150px;
+  padding: 6px 8px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.task-row input[type="text"]:focus,
+.task-row input[type="date"]:focus {
+  border: 1px solid #00509e;
+}
+
+.task-row input[type="checkbox"] {
+  flex: 0 0 auto;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  border-top: 2px solid #fff;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .task-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-row label {
+    flex: 1 1 auto;
+  }
+
+  .task-row input[type="text"],
+  .task-row input[type="date"] {
+    width: 100%;
+  }
+}
